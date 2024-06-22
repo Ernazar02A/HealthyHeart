@@ -143,7 +143,7 @@ private class LoadingView: BaseView {
         super.setup()
         layer.cornerRadius = 16
         shapeLayer.frame = bounds
-        shapeLayer.strokeColor = Theme.shared.darkGrayColor.withAlphaComponent(0.38).cgColor
+        shapeLayer.strokeColor = Theme.shared.textDarkGray.withAlphaComponent(0.38).cgColor
         spinningView.layer.addSublayer(shapeLayer)
         addSubview(spinningView)
         spinningView.snp.makeConstraints { make in

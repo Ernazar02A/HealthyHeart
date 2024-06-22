@@ -36,13 +36,13 @@ final class MainTextField: BaseView {
     
     private let title: UILabel = {
         let view = UILabel()
-        view.font = .h14Regular
+        view.font = .h17Regular
         return view
     }()
     
     private let errorTitleLabel: UILabel = {
         let view = UILabel()
-        view.font = .h14Regular
+        view.font = .h17Regular
         view.isHidden = false
         view.numberOfLines = 3
         return view
@@ -135,14 +135,14 @@ final class MainTextField: BaseView {
     }
     
     override func applyThemeProperties(_ themeProperties: ThemeProperties) {
-        title.textColor = themeProperties.blueGrayColor
-        textField.textColor = themeProperties.darkBlueColor
-        textField.layer.borderColor = themeProperties.lightGrayishBlueColor.cgColor
-        errorTitleLabel.textColor = themeProperties.redOrangeColor
+        title.textColor = themeProperties.textDarkGray
+        textField.textColor = themeProperties.textDarkDefault
+        textField.layer.borderColor = themeProperties.textDarkDefault.cgColor
+        errorTitleLabel.textColor = themeProperties.textRedDefault
     }
     
     func setupErrorBorder(with text: String = "") {
-        textField.layer.borderColor = Theme.shared.redOrangeColor.cgColor
+        textField.layer.borderColor = Theme.shared.textRedDefault.cgColor
         if !text.isEmpty {
             errorTitleLabel.text = text
         }
@@ -154,7 +154,7 @@ final class MainTextField: BaseView {
     }
     
     func removerErrorBorder() {
-        textField.layer.borderColor = Theme.shared.lightGrayishBlueColor.cgColor
+        textField.layer.borderWidth = 0
         errorTitleLabel.text = ""
         errorTitleLabel.numberOfLines = 3
     }
@@ -174,8 +174,7 @@ final class MainTextField: BaseView {
     }
     
     func clearError() {
-        textField.layer.borderColor = themeProperties.lightGrayishBlueColor.cgColor
-        textField.layer.borderWidth = 2
+        textField.layer.borderWidth = 0
         errorTitleLabel.text = ""
     }
     
@@ -219,12 +218,14 @@ extension MainTextField: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderColor = Theme.shared.darkBlueColor.cgColor
+        textField.layer.borderColor = Theme.shared.textDarkGray.cgColor
+        textField.layer.borderWidth = 1
         didBeginEditing?(textField)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderColor = Theme.shared.lightGrayishBlueColor.cgColor
+        textField.layer.borderColor = .none
+        textField.layer.borderWidth = 1
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

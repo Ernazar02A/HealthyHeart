@@ -69,7 +69,6 @@ struct Dependency {
         registerKeyChainService()
         registerUserDefaultsService()
         registerDefaultScreenLocker()
-        registerGoogleService()
         registerValidatorService()
     }
     
@@ -83,10 +82,10 @@ struct Dependency {
     }
     
     fileprivate static func registerScreens() {
-        registerAuthScreen()
-        registerRegisterScreen()
-        registerConfirmEmailScreen()
-        registerEmailInputScreen()
+//        registerAuthScreen()
+//        registerRegisterScreen()
+//        registerConfirmEmailScreen()
+//        registerEmailInputScreen()
     }
 }
 

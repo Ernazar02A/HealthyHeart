@@ -19,26 +19,18 @@ final class MainButton: UIButton, IThemeApplyable {
     }
     
     func setupButton() {
-        titleLabel?.font = .h16Bold
+        titleLabel?.font = .h17SemiBold
         layer.cornerRadius = 10
         applyThemeProperties(themeProperties)
     }
     
     func applyThemeProperties(_ themeProperties: ThemeProperties) {
-        backgroundColor = themeProperties.skyBlueColor
-        setTitleColor(themeProperties.white, for: .normal)
-    }
-    
-    func changeActiveBorderButton(state: Bool) {
-        backgroundColor = state ? Theme.shared.activeButtonColor : .clear
-        isEnabled = state
-        layer.borderWidth = state ? 0 : 1
-        layer.borderColor = Theme.shared.lightBluishGray.cgColor
-        setTitleColor(state ? Theme.shared.white : Theme.shared.blueGrayColor, for: .normal)
+        backgroundColor = themeProperties.bgRedDefault
+        setTitleColor(themeProperties.textWhite, for: .normal)
     }
     
     func changeActiveBackgroundButton(state: Bool) {
-        backgroundColor = state ? Theme.shared.activeButtonColor : Theme.shared.lightBluishGray
+        backgroundColor = state ? Theme.shared.bgRedDefault : Theme.shared.bgGray
         isEnabled = state
     }
 }
