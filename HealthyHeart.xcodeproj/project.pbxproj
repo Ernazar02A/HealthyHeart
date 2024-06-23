@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0993727D08F46C868C2CEAE6 /* Pods_HealthyHeart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16B0FFC7DD2BC62CD6707E3 /* Pods_HealthyHeart.framework */; };
+		5216E50C2C284BB100898B86 /* OnBoardingRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E5082C284BB100898B86 /* OnBoardingRegistration.swift */; };
+		5216E50D2C284BB200898B86 /* OnBoardingNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E5092C284BB100898B86 /* OnBoardingNavigator.swift */; };
+		5216E50E2C284BB200898B86 /* OnBoardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E50A2C284BB100898B86 /* OnBoardingPresenter.swift */; };
+		5216E50F2C284BB200898B86 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E50B2C284BB100898B86 /* OnBoardingViewController.swift */; };
+		5216E5122C28604600898B86 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E5112C28604600898B86 /* OnboardingCollectionViewCell.swift */; };
 		524490952C22F66500998314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524490942C22F66500998314 /* AppDelegate.swift */; };
 		524490972C22F66500998314 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524490962C22F66500998314 /* SceneDelegate.swift */; };
-		524490992C22F66500998314 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524490982C22F66500998314 /* ViewController.swift */; };
 		5244909E2C22F66800998314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5244909D2C22F66800998314 /* Assets.xcassets */; };
 		524490A12C22F66800998314 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 524490A02C22F66800998314 /* Base */; };
 		524490AC2C22FE0900998314 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524490AA2C22FE0900998314 /* Dependency.swift */; };
@@ -53,10 +57,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5216E5082C284BB100898B86 /* OnBoardingRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingRegistration.swift; sourceTree = "<group>"; };
+		5216E5092C284BB100898B86 /* OnBoardingNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingNavigator.swift; sourceTree = "<group>"; };
+		5216E50A2C284BB100898B86 /* OnBoardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPresenter.swift; sourceTree = "<group>"; };
+		5216E50B2C284BB100898B86 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		5216E5112C28604600898B86 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		524490912C22F66500998314 /* HealthyHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524490942C22F66500998314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524490962C22F66500998314 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		524490982C22F66500998314 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5244909D2C22F66800998314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524490A02C22F66800998314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		524490A22C22F66800998314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +122,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5216E5072C284B7800898B86 /* OnBoardingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5216E5102C28602B00898B86 /* Views */,
+				5216E5082C284BB100898B86 /* OnBoardingRegistration.swift */,
+				5216E5092C284BB100898B86 /* OnBoardingNavigator.swift */,
+				5216E50A2C284BB100898B86 /* OnBoardingPresenter.swift */,
+				5216E50B2C284BB100898B86 /* OnBoardingViewController.swift */,
+			);
+			path = OnBoardingScreen;
+			sourceTree = "<group>";
+		};
+		5216E5102C28602B00898B86 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5216E5112C28604600898B86 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		524490882C22F66400998314 = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +169,6 @@
 				524490E62C22FE5C00998314 /* Misc */,
 				524490FA2C22FE7000998314 /* Views */,
 				524490FD2C22FFF600998314 /* WorkFlow */,
-				524490982C22F66500998314 /* ViewController.swift */,
 				524490A92C22F7C200998314 /* Resourse */,
 			);
 			path = HealthyHeart;
@@ -357,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				524491042C23000E00998314 /* Base */,
+				5216E5072C284B7800898B86 /* OnBoardingScreen */,
 			);
 			path = WorkFlow;
 			sourceTree = "<group>";
@@ -506,8 +534,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				524490CC2C22FE3200998314 /* AuthUseCase.swift in Sources */,
+				5216E50C2C284BB100898B86 /* OnBoardingRegistration.swift in Sources */,
+				5216E50D2C284BB200898B86 /* OnBoardingNavigator.swift in Sources */,
+				5216E50E2C284BB200898B86 /* OnBoardingPresenter.swift in Sources */,
+				5216E50F2C284BB200898B86 /* OnBoardingViewController.swift in Sources */,
 				524490C92C22FE3200998314 /* VerificationModel.swift in Sources */,
-				524490992C22F66500998314 /* ViewController.swift in Sources */,
 				524490EB2C22FE5C00998314 /* UILabel + Extension.swift in Sources */,
 				524490CD2C22FE3200998314 /* TokenService.swift in Sources */,
 				524490D02C22FE3200998314 /* ValidatorService.swift in Sources */,
@@ -545,6 +576,7 @@
 				524491092C23000E00998314 /* BaseView.swift in Sources */,
 				524490CE2C22FE3200998314 /* UserDefaultKey.swift in Sources */,
 				524490C82C22FE3200998314 /* TokenResponseModel.swift in Sources */,
+				5216E5122C28604600898B86 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,10 @@ import UIKit
 
 final class MainButton: UIButton, IThemeApplyable {
     
-    init() {
+    init(isActive: Bool) {
         super.init(frame: .zero)
         setupButton()
+        changeActiveBackgroundButton(state: isActive)
     }
     
     required init?(coder: NSCoder) {

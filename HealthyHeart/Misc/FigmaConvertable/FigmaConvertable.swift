@@ -22,8 +22,8 @@ protocol IFigmaConvertible {
 }
 
 extension IFigmaConvertible {
-    private static var figmaScreenHeight: CGFloat { 812 }
-    private static var figmaScreenWidth: CGFloat { 375 }
+    private static var figmaScreenHeight: CGFloat { 852 }
+    private static var figmaScreenWidth: CGFloat { 393 }
     
     var screenHeight: CGFloat {
         return UIScreen.main.bounds.height
