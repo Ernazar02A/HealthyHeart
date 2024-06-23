@@ -18,7 +18,6 @@ extension Resolver.Name {
     static let deviceID = Self("deviceID")
     static let defaultLocker = Self("defaultLocker")
     static let keychainAccessKey = Self("keychainAccessKey")
-    static let isReadOnBoarding = Self("isReadOnBoarding")
 }
 
 struct Dependency {

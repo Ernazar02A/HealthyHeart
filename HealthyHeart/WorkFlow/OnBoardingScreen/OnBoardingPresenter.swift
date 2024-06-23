@@ -36,7 +36,7 @@ final class OnBoardingPresenter: IOnBoardingPresenter {
     private func saveReadOnboarding() {
         userDefaultService.setValue(
             true,
-            for: Dependency.resolve(name: .isReadOnBoarding)
+            for: .isReadOnBoarding
         )
     }
     
