@@ -10,6 +10,7 @@ import Foundation
 private enum Key: String {
     case language
     case theme
+    case isReadOnBoarding
 }
 
 struct UserDefaultsKey<Value: Codable> {
@@ -84,5 +85,9 @@ extension UserDefaultsKey {
     
     static var theme: UserDefaultsKey<UserDefaultsTheme> {
         return UserDefaultsKey<UserDefaultsTheme>(key: .theme)
+    }
+    
+    static var isReadOnBoarding: UserDefaultsKey<Bool> {
+        return UserDefaultsKey<Bool>(key: .isReadOnBoarding)
     }
 }
