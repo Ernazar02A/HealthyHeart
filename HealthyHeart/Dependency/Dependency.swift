@@ -18,6 +18,7 @@ extension Resolver.Name {
     static let deviceID = Self("deviceID")
     static let defaultLocker = Self("defaultLocker")
     static let keychainAccessKey = Self("keychainAccessKey")
+    static let isReadOnBoarding = Self("isReadOnBoarding")
 }
 
 struct Dependency {
@@ -82,10 +83,7 @@ struct Dependency {
     }
     
     fileprivate static func registerScreens() {
-//        registerAuthScreen()
-//        registerRegisterScreen()
-//        registerConfirmEmailScreen()
-//        registerEmailInputScreen()
+        registerOnBoardingScreen()
     }
 }
 
