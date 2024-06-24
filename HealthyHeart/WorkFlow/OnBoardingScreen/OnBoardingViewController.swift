@@ -152,15 +152,18 @@ final class OnBoardingViewController: IOnBoardingViewController {
             navigationItem.leftBarButtonItem = nil
             let rightBarButton = UIBarButtonItem(title: "Пропустить", style: .plain, target: self, action: #selector(skip))
             navigationItem.rightBarButtonItem = rightBarButton
+            nextButton.setTitle("Далее", for: .normal)
         case 1:
             let leftBarButton = createBarButtonItemWithIconAndTitle(icon: .arrowLeftIcon, title: "Назад", action:  #selector(backPage))
             navigationItem.leftBarButtonItem = leftBarButton
             let rightBarButton = UIBarButtonItem(title: "Пропустить", style: .plain, target: self, action: #selector(skip))
             navigationItem.rightBarButtonItem = rightBarButton
+            nextButton.setTitle("Далее", for: .normal)
         case 2:
             let leftBarButton = createBarButtonItemWithIconAndTitle(icon: .arrowLeftIcon, title: "Назад", action: #selector(backPage))
             navigationItem.leftBarButtonItem = leftBarButton
             navigationItem.rightBarButtonItem = nil
+            nextButton.setTitle("Войти", for: .normal)
         default:
             break
         }
