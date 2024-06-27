@@ -7,7 +7,7 @@
 //
 //
 
-import Foundation
+import UIKit
 
 protocol IOnBoardingNavigator {
     func presentAuthScreen()
@@ -18,7 +18,9 @@ struct OnBoardingNavigator: IOnBoardingNavigator {
     weak var viewController: IOnBoardingViewController!
     
     func presentAuthScreen() {
-        print("presentAuthScreen")
+        let navVc = UINavigationController(rootViewController: (Dependency.resolve(IAuthViewController.self)))
+        navVc.modalPresentationStyle = .fullScreen
+        viewController.navigationController?.present(navVc, animated: true)
     }
 }
 

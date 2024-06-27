@@ -13,6 +13,14 @@
 		5216E50E2C284BB200898B86 /* OnBoardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E50A2C284BB100898B86 /* OnBoardingPresenter.swift */; };
 		5216E50F2C284BB200898B86 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E50B2C284BB100898B86 /* OnBoardingViewController.swift */; };
 		5216E5122C28604600898B86 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E5112C28604600898B86 /* OnboardingCollectionViewCell.swift */; };
+		52413DD12C29672100979932 /* AuthRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52413DCD2C29672100979932 /* AuthRegistration.swift */; };
+		52413DD22C29672100979932 /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52413DCE2C29672100979932 /* AuthNavigator.swift */; };
+		52413DD32C29672100979932 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52413DCF2C29672100979932 /* AuthPresenter.swift */; };
+		52413DD42C29672100979932 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52413DD02C29672100979932 /* AuthViewController.swift */; };
+		52413DDA2C298EBA00979932 /* ConfirmNumberRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52413DD62C298EBA00979932 /* ConfirmNumberRegistration.swift */; };
+		52413DDB2C298EBA00979932 /* ConfirmNumberNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52413DD72C298EBA00979932 /* ConfirmNumberNavigator.swift */; };
+		52413DDC2C298EBA00979932 /* ConfirmNumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52413DD82C298EBA00979932 /* ConfirmNumberPresenter.swift */; };
+		52413DDD2C298EBA00979932 /* ConfirmNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52413DD92C298EBA00979932 /* ConfirmNumberViewController.swift */; };
 		524490952C22F66500998314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524490942C22F66500998314 /* AppDelegate.swift */; };
 		524490972C22F66500998314 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524490962C22F66500998314 /* SceneDelegate.swift */; };
 		5244909E2C22F66800998314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5244909D2C22F66800998314 /* Assets.xcassets */; };
@@ -54,6 +62,9 @@
 		524491092C23000E00998314 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524491022C23000E00998314 /* BaseView.swift */; };
 		5244910A2C23000E00998314 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524491032C23000E00998314 /* BaseViewController.swift */; };
 		5244910C2C2302CE00998314 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244910B2C2302CE00998314 /* Font.swift */; };
+		52CC9D4F2C2ABB66007D2A88 /* SecrectKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9D4E2C2ABB66007D2A88 /* SecrectKeyModel.swift */; };
+		52CC9D522C2ACB82007D2A88 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9D512C2ACB82007D2A88 /* OneTimeCodeTextField.swift */; };
+		52CC9D542C2B203E007D2A88 /* ConfirmCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9D532C2B203E007D2A88 /* ConfirmCodeResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +73,14 @@
 		5216E50A2C284BB100898B86 /* OnBoardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPresenter.swift; sourceTree = "<group>"; };
 		5216E50B2C284BB100898B86 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		5216E5112C28604600898B86 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		52413DCD2C29672100979932 /* AuthRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRegistration.swift; sourceTree = "<group>"; };
+		52413DCE2C29672100979932 /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigator.swift; sourceTree = "<group>"; };
+		52413DCF2C29672100979932 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		52413DD02C29672100979932 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		52413DD62C298EBA00979932 /* ConfirmNumberRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmNumberRegistration.swift; sourceTree = "<group>"; };
+		52413DD72C298EBA00979932 /* ConfirmNumberNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmNumberNavigator.swift; sourceTree = "<group>"; };
+		52413DD82C298EBA00979932 /* ConfirmNumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmNumberPresenter.swift; sourceTree = "<group>"; };
+		52413DD92C298EBA00979932 /* ConfirmNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmNumberViewController.swift; sourceTree = "<group>"; };
 		524490912C22F66500998314 /* HealthyHeart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyHeart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524490942C22F66500998314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524490962C22F66500998314 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +124,9 @@
 		524491022C23000E00998314 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		524491032C23000E00998314 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5244910B2C2302CE00998314 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		52CC9D4E2C2ABB66007D2A88 /* SecrectKeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecrectKeyModel.swift; sourceTree = "<group>"; };
+		52CC9D512C2ACB82007D2A88 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
+		52CC9D532C2B203E007D2A88 /* ConfirmCodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeResponseModel.swift; sourceTree = "<group>"; };
 		A16B0FFC7DD2BC62CD6707E3 /* Pods_HealthyHeart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthyHeart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF13881BC7E1BA0438017E4A /* Pods-HealthyHeart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyHeart.debug.xcconfig"; path = "Target Support Files/Pods-HealthyHeart/Pods-HealthyHeart.debug.xcconfig"; sourceTree = "<group>"; };
 		C7046D2CE47FEAC55BBCCDDE /* Pods-HealthyHeart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyHeart.release.xcconfig"; path = "Target Support Files/Pods-HealthyHeart/Pods-HealthyHeart.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +162,29 @@
 				5216E5112C28604600898B86 /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		52413DCC2C29670A00979932 /* AuthScreen */ = {
+			isa = PBXGroup;
+			children = (
+				52413DCD2C29672100979932 /* AuthRegistration.swift */,
+				52413DCE2C29672100979932 /* AuthNavigator.swift */,
+				52413DCF2C29672100979932 /* AuthPresenter.swift */,
+				52413DD02C29672100979932 /* AuthViewController.swift */,
+			);
+			path = AuthScreen;
+			sourceTree = "<group>";
+		};
+		52413DD52C298E7E00979932 /* ConfirmNumberScreen */ = {
+			isa = PBXGroup;
+			children = (
+				52CC9D502C2ACA86007D2A88 /* Views */,
+				52413DD62C298EBA00979932 /* ConfirmNumberRegistration.swift */,
+				52413DD72C298EBA00979932 /* ConfirmNumberNavigator.swift */,
+				52413DD82C298EBA00979932 /* ConfirmNumberPresenter.swift */,
+				52413DD92C298EBA00979932 /* ConfirmNumberViewController.swift */,
+			);
+			path = ConfirmNumberScreen;
 			sourceTree = "<group>";
 		};
 		524490882C22F66400998314 = {
@@ -217,6 +262,8 @@
 				524490B22C22FE3200998314 /* EmailModel.swift */,
 				524490B32C22FE3200998314 /* TokenResponseModel.swift */,
 				524490B42C22FE3200998314 /* VerificationModel.swift */,
+				52CC9D4E2C2ABB66007D2A88 /* SecrectKeyModel.swift */,
+				52CC9D532C2B203E007D2A88 /* ConfirmCodeResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -385,6 +432,8 @@
 			children = (
 				524491042C23000E00998314 /* Base */,
 				5216E5072C284B7800898B86 /* OnBoardingScreen */,
+				52413DCC2C29670A00979932 /* AuthScreen */,
+				52413DD52C298E7E00979932 /* ConfirmNumberScreen */,
 			);
 			path = WorkFlow;
 			sourceTree = "<group>";
@@ -400,6 +449,14 @@
 				524491032C23000E00998314 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		52CC9D502C2ACA86007D2A88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				52CC9D512C2ACB82007D2A88 /* OneTimeCodeTextField.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7FF4BF5F07D5968292D96AC2 /* Pods */ = {
@@ -537,6 +594,11 @@
 				5216E50C2C284BB100898B86 /* OnBoardingRegistration.swift in Sources */,
 				5216E50D2C284BB200898B86 /* OnBoardingNavigator.swift in Sources */,
 				5216E50E2C284BB200898B86 /* OnBoardingPresenter.swift in Sources */,
+				52413DDA2C298EBA00979932 /* ConfirmNumberRegistration.swift in Sources */,
+				52413DDB2C298EBA00979932 /* ConfirmNumberNavigator.swift in Sources */,
+				52413DDC2C298EBA00979932 /* ConfirmNumberPresenter.swift in Sources */,
+				52CC9D4F2C2ABB66007D2A88 /* SecrectKeyModel.swift in Sources */,
+				52413DDD2C298EBA00979932 /* ConfirmNumberViewController.swift in Sources */,
 				5216E50F2C284BB200898B86 /* OnBoardingViewController.swift in Sources */,
 				524490C92C22FE3200998314 /* VerificationModel.swift in Sources */,
 				524490EB2C22FE5C00998314 /* UILabel + Extension.swift in Sources */,
@@ -556,6 +618,7 @@
 				524490ED2C22FE5C00998314 /* UITableViewCell + Extention.swift in Sources */,
 				524490F02C22FE5C00998314 /* IAlertPresentable.swift in Sources */,
 				524490C72C22FE3200998314 /* EmailModel.swift in Sources */,
+				52CC9D522C2ACB82007D2A88 /* OneTimeCodeTextField.swift in Sources */,
 				524490C62C22FE3200998314 /* KeychainService.swift in Sources */,
 				524490EF2C22FE5C00998314 /* FigmaConvertable.swift in Sources */,
 				524490972C22F66500998314 /* SceneDelegate.swift in Sources */,
@@ -568,6 +631,11 @@
 				524490EC2C22FE5C00998314 /* UITableView + Extension.swift in Sources */,
 				524491052C23000E00998314 /* BaseCollectionReusableView.swift in Sources */,
 				524490F22C22FE5C00998314 /* Locker.swift in Sources */,
+				52413DD12C29672100979932 /* AuthRegistration.swift in Sources */,
+				52413DD22C29672100979932 /* AuthNavigator.swift in Sources */,
+				52413DD32C29672100979932 /* AuthPresenter.swift in Sources */,
+				52413DD42C29672100979932 /* AuthViewController.swift in Sources */,
+				52CC9D542C2B203E007D2A88 /* ConfirmCodeResponseModel.swift in Sources */,
 				524490EA2C22FE5C00998314 /* UICollectionView+Extension.swift in Sources */,
 				524490C52C22FE3200998314 /* KeychainKey.swift in Sources */,
 				524490F42C22FE5C00998314 /* Theme.swift in Sources */,

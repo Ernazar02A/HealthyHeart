@@ -34,11 +34,7 @@ final class MainTextField: BaseView {
         }
     }
     
-    private let title: UILabel = {
-        let view = UILabel()
-        view.font = .h17Regular
-        return view
-    }()
+    private let title = UILabel(font: .h17Regular)
     
     private let errorTitleLabel: UILabel = {
         let view = UILabel()
@@ -53,14 +49,12 @@ final class MainTextField: BaseView {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: view.frame.height))
         let rightViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: view.frame.height))
         rightViewContainer.addSubview(rightImageButton)
-        view.leftView = paddingView
         view.rightView = rightViewContainer
         view.leftViewMode = .always
         view.rightViewMode = .always
         view.textContentType = .username
         view.autocapitalizationType = .none
         view.layer.cornerRadius = 8
-        view.layer.borderWidth = 1
         view.delegate = self
         return view
     }()
@@ -70,6 +64,8 @@ final class MainTextField: BaseView {
         view.addTarget(self, action: #selector(onRightImageTap), for: .touchUpInside)
         return view
     }()
+    
+    private let leftLabelView = UILabel(font: .h17Regular)
     
     var onButtonPress: ((MainTextField) -> Void)?
     var onChangeText: ((String) -> Void)?
@@ -87,8 +83,6 @@ final class MainTextField: BaseView {
     init(style: TextFieldModel) {
         super.init(frame: .zero)
         setup()
-        title.text = style.title
-        title.isHidden = style.title == nil
         configureTextField(with: style)
         configureImageView(with: style)
     }
@@ -109,16 +103,14 @@ final class MainTextField: BaseView {
     
     override func setupConstraints() {
         super.setupConstraints()
-        
         title.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(heightComputed(-20))
-            make.leading.trailing.equalToSuperview().offset(widthComputed(0))
-            make.height.equalTo(22)
+            make.top.equalToSuperview()
+            make.directionalHorizontalEdges.equalToSuperview()
         }
         
         textField.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(heightComputed(5))
-            make.leading.trailing.equalToSuperview().offset(widthComputed(0))
+            make.top.equalTo(title.snp.bottom).offset(heightComputed(8))
+            make.directionalHorizontalEdges.equalToSuperview()
             make.height.equalTo(44)
         }
         
@@ -129,20 +121,23 @@ final class MainTextField: BaseView {
         
         errorTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(textField.snp.bottom).offset(heightComputed(5))
-            make.leading.trailing.equalToSuperview().offset(widthComputed(0))
+            make.directionalHorizontalEdges.equalToSuperview()
             make.bottom.equalToSuperview().offset(heightComputed(0))
         }
     }
     
     override func applyThemeProperties(_ themeProperties: ThemeProperties) {
-        title.textColor = themeProperties.textDarkGray
-        textField.textColor = themeProperties.textDarkDefault
-        textField.layer.borderColor = themeProperties.textDarkDefault.cgColor
-        errorTitleLabel.textColor = themeProperties.textRedDefault
+        super.applyThemeProperties(themeProperties)
+        //title.textColor = themeProperties.textDarkDefault
+        textField.backgroundColor = .clear
+        leftLabelView.textColor = themeProperties.labelPrimary
+        //textField.layer.borderColor = themeProperties.textDarkDefault.cgColor
+        errorTitleLabel.textColor = .systemRed
     }
     
     func setupErrorBorder(with text: String = "") {
-        textField.layer.borderColor = Theme.shared.textRedDefault.cgColor
+        textField.layer.borderColor = UIColor.red.cgColor
+        textField.layer.borderWidth = 1
         if !text.isEmpty {
             errorTitleLabel.text = text
         }
@@ -200,6 +195,8 @@ final class MainTextField: BaseView {
     }
     
     private func configureTextField(with item: TextFieldModel) {
+        leftLabelView.text = item.title
+        textField.leftView = leftLabelView
         textField.placeholder = item.placeholder
         textField.rightViewMode = .always
         textField.isSecureTextEntry = item.isSecureTextEntry ?? false
@@ -217,16 +214,14 @@ extension MainTextField: UITextFieldDelegate {
         onChangeText?(text)
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderColor = Theme.shared.textDarkGray.cgColor
-        textField.layer.borderWidth = 1
-        didBeginEditing?(textField)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderColor = .none
-        textField.layer.borderWidth = 1
-    }
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        textField.layer.borderWidth = 2
+//        didBeginEditing?(textField)
+//    }
+//    
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        textField.layer.borderWidth = 0
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

@@ -1,0 +1,77 @@
+//
+//  
+//  ConfirmNumberPresenter.swift
+//  HealthyHeart
+//
+//  Created by Ernazar on 24/6/24.
+//
+//
+
+import Foundation
+
+protocol IConfirmNumberDelegate: AnyObject {
+    func setNumber(number: String)
+    func showErrorCode()
+}
+
+protocol IConfirmNumberPresenter {
+    func setDelegate(_ delegate: IConfirmNumberDelegate)
+    func confirmCode(code: String)
+}
+
+final class ConfirmNumberPresenter: IConfirmNumberPresenter {
+    
+    private let navigator: IConfirmNumberNavigator
+    weak var delegate: IConfirmNumberDelegate?
+    private let authUseCase: IAuthUseCase
+    private let locker = Locker()
+    private let number: String
+    private let secretKey: String
+    
+    init(
+        navigator: IConfirmNumberNavigator,
+        authUseCase: IAuthUseCase,
+        number: String,
+        secretKey: String
+    ) {
+        self.navigator = navigator
+        self.authUseCase = authUseCase
+        self.number = number
+        self.secretKey = secretKey
+    }
+    
+    func setDelegate(_ delegate: IConfirmNumberDelegate) {
+        self.delegate = delegate
+        delegate.setNumber(number: number)
+    }
+    
+    func confirmCode(code: String) {
+        let sanitizedNumber = number.replacingOccurrences(of: " ", with: "")
+        locker.lock()
+        authUseCase.verifyPhoneNumber(
+            secretKey: secretKey,
+            phoneNumber: sanitizedNumber,
+            phoneCode: code
+        ) { [weak self] result in
+            guard let self else { return }
+            self.locker.unlock()
+            switch result {
+            case .success(let data):
+                if data.isCreate {
+                    navigator.presentSuccessVerificationScreen()
+                } else {
+                    navigator.presentTabBarScreen()
+                }
+            case .failure(let failure as NSError):
+                if failure.code == 400 {
+                    self.delegate?.showErrorCode()
+                } else {
+                    self.navigator.showNativeSingleButtonAlert(
+                        title: "Что то пошло не так",
+                        message: failure.localizedDescription
+                    )
+                }
+            }
+        }
+    }
+}

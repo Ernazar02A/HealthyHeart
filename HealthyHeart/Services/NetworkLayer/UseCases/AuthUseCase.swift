@@ -17,11 +17,9 @@ extension Dependency {
 
 protocol IAuthUseCase {
     func refreshToken(with token: String, completion: @escaping (Result<TokenResponseModel, Error>) -> Void)
-    func login(with email: String, password: String, completion: @escaping (Result<TokenResponseModel, Error>) -> Void)
-    func register(with email: String, password: String, confirmPassword: String, completion: @escaping (Result<EmailModel, Error>) -> Void)
-    func googleAuth(with idToken: String, completion: @escaping (Result<TokenResponseModel, Error>) -> Void)
-    func confirmEmailCode(with code: String, completion: @escaping (Result<TokenResponseModel, Error>) -> Void)
-    func forgotPassword(with email: String, completion: @escaping (Result<String, Error>) -> Void)
+    func authUser(with phoneNumber: String, completion: @escaping (Result<SecrectKeyModel, Error>) -> Void)
+    func resendPhoneCode(secretKey: String, phoneNumber: String, completion: @escaping (Result<TokenResponseModel, Error>) -> Void)
+    func verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String,completion: @escaping (Result<ConfirmCodeResponseModel, Error>) -> Void)
 }
 
 private struct AuthUseCase: IAuthUseCase {
@@ -32,102 +30,84 @@ private struct AuthUseCase: IAuthUseCase {
         provider = NetworkProvider<Target>()
     }
     
-    func login(with email: String, password: String, completion: @escaping (Result<TokenResponseModel, Error>) -> Void) {
-        return provider.request(target: .login(email: email, password: password), isRetryable: false, completion: completion)
-    }
-    
-    func googleAuth(with idToken: String, completion: @escaping (Result<TokenResponseModel, any Error>) -> Void) {
-        return provider.request(target: .googleAuth(idToken: idToken), completion: completion)
-    }
-    
     func refreshToken(with token: String, completion: @escaping (Result<TokenResponseModel, Error>) -> Void) {
         return provider.request(target: .refreshToken(token: token), completion: completion)
     }
     
-    func register(with email: String, password: String, confirmPassword: String, completion: @escaping (Result<EmailModel, any Error>) -> Void) {
-        return provider.request(target: .register(email: email, password: password, confirmPassword: confirmPassword), isRetryable: false, completion: completion)
+    func authUser(with phoneNumber: String, completion: @escaping (Result<SecrectKeyModel, any Error>) -> Void) {
+        return provider.request(target: .authUser(phoneNumber: phoneNumber), isRetryable: false, completion: completion)
     }
     
-    func confirmEmailCode(with code: String, completion: @escaping (Result<TokenResponseModel, any Error>) -> Void) {
-        return provider.request(target: .confirmEmailCode(code: code), isRetryable: false, completion: completion)
+    func resendPhoneCode(secretKey: String, phoneNumber: String, completion: @escaping (Result<TokenResponseModel, any Error>) -> Void) {
+        return provider.request(target: .resendPhoneCode(secretKey: secretKey, phoneNumber: phoneNumber), isRetryable: false, completion: completion)
     }
     
-    func forgotPassword(with email: String, completion: @escaping (Result<String, any Error>) -> Void) {
-        return provider.request(target: .forgotPassword(email: email), isRetryable: false, completion: completion)
+    func verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String, completion: @escaping (Result<ConfirmCodeResponseModel, any Error>) -> Void) {
+        return provider.request(target: .verifyPhoneNumber(secretKey: secretKey, phoneNumber: phoneNumber, phoneCode: phoneCode), isRetryable: false, completion: completion)
     }
 }
 
 private enum Target: INetworkRouter {
     case refreshToken(token: String)
-    case googleAuth(idToken: String)
-    case login(email: String, password: String)
-    case register(email: String, password: String, confirmPassword: String)
-    case confirmEmailCode(code: String)
-    case forgotPassword(email: String)
+    case authUser(phoneNumber: String)
+    case resendPhoneCode(secretKey: String, phoneNumber: String)
+    case verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String)
 }
 
 extension Target: TargetType {
     var path: String {
         switch self {
-        case .login:
-            return "login/"
         case .refreshToken:
-            return "users/refresh/"
-        case .googleAuth:
-            return "google-auth/"
-        case .register:
-            return "register/"
-        case .confirmEmailCode(let code):
-            return "user/\(code)"
-        case .forgotPassword:
-            return "forgot-password/"
+            return "refresh/"
+        case .authUser:
+            return "auth_user/"
+        case .resendPhoneCode:
+            return "resend_phone_code/"
+        case .verifyPhoneNumber:
+            return "verify_phone_number/"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login:
-            return .post
         case .refreshToken:
             return .post
-        case .googleAuth:
+        case .authUser:
             return .post
-        case .register:
-            return .post
-        case .confirmEmailCode:
-            return .get
-        case .forgotPassword:
-            return .post
+        case .resendPhoneCode:
+            return .patch
+        case .verifyPhoneNumber:
+            return .patch
         }
     }
     
     var task: Moya.Task {
         switch self {
-        case .login(let email, let password):
+        case .refreshToken(let token):
             return .requestParameters(
-                parameters: ["email": email, "password": password],
+                parameters: ["refresh": token],
                 encoding: JSONEncoding.default
             )
-        case .refreshToken(let oldToken):
+        case .authUser(let phoneNumber):
             return .requestParameters(
-                parameters: ["refresh": oldToken],
+                parameters: ["phone_number": phoneNumber],
                 encoding: JSONEncoding.default
             )
-        case .googleAuth(let idToken):
+        case .resendPhoneCode(let secretKey, let phoneNumber):
             return .requestParameters(
-                parameters: ["auth_token": idToken],
+                parameters: [
+                    "secret_key": secretKey,
+                    "phone_number": phoneNumber
+                ],
                 encoding: JSONEncoding.default
             )
-        case .register(let email, let password, let confirmPassword):
+        case .verifyPhoneNumber(let secretKey, let phoneNumber, let phoneCode):
             return .requestParameters(
-                parameters: ["email": email, "password": password, "password_submit": confirmPassword],
-                encoding: JSONEncoding.default
-            )
-        case .confirmEmailCode:
-            return .requestPlain
-        case .forgotPassword(let email):
-            return .requestParameters(
-                parameters: ["email": email],
+                parameters: [
+                    "secret_key": secretKey,
+                    "phone_number": phoneNumber,
+                    "phone_code": phoneCode
+                ],
                 encoding: JSONEncoding.default
             )
         }

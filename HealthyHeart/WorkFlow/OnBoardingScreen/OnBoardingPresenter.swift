@@ -15,7 +15,7 @@ protocol IOnBoardingDelegate: AnyObject {
 
 protocol IOnBoardingPresenter {
     func setDelegate(_ delegate: IOnBoardingDelegate)
-    func skip()
+    func presentAuthScreen()
 }
 
 final class OnBoardingPresenter: IOnBoardingPresenter {
@@ -44,7 +44,7 @@ final class OnBoardingPresenter: IOnBoardingPresenter {
         self.delegate = delegate
     }
     
-    func skip() {
+    func presentAuthScreen() {
         navigator.presentAuthScreen()
     }
 }
