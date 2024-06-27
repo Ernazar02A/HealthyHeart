@@ -106,10 +106,10 @@ final class OnBoardingViewController: IOnBoardingViewController {
     
     override func applyThemeProperties(_ themeProperties: any ThemeProperties) {
         super.applyThemeProperties(themeProperties)
-        view.backgroundColor = themeProperties.bgLightGray
+        view.backgroundColor = themeProperties.bgPrimary
         collectionView.backgroundColor = .clear
-        navigationController?.navigationBar.tintColor = Theme.shared.textDarkDefault
-        pageControl.currentPageIndicatorTintColor = themeProperties.textDarkDefault
+        navigationController?.navigationBar.tintColor = Theme.shared.blue
+        pageControl.currentPageIndicatorTintColor = themeProperties.labelPrimary
         pageControl.pageIndicatorTintColor = themeProperties.bgGrayDefault
     }
     
@@ -120,7 +120,7 @@ final class OnBoardingViewController: IOnBoardingViewController {
     
     @objc
     private func skip() {
-        presenter.skip()
+        presenter.presentAuthScreen()
     }
     
     @objc
@@ -131,7 +131,11 @@ final class OnBoardingViewController: IOnBoardingViewController {
     @objc 
     private func nextButtonTapped(_ sender: UIButton) {
         sender.animationTapButton()
-        changePage(by: 1)
+        if pageControl.currentPage == pageControl.numberOfPages - 1 {
+            presenter.presentAuthScreen()
+        } else {
+            changePage(by: 1)
+        }
     }
     
     private func changePage(by offset: Int) {
@@ -154,13 +158,13 @@ final class OnBoardingViewController: IOnBoardingViewController {
             navigationItem.rightBarButtonItem = rightBarButton
             nextButton.setTitle("Далее", for: .normal)
         case 1:
-            let leftBarButton = createBarButtonItemWithIconAndTitle(icon: .arrowLeftIcon, title: "Назад", action:  #selector(backPage))
+            let leftBarButton = createBarButtonItemWithIconAndTitle(icon: .arrowLeftIcon, title: "  Назад", action:  #selector(backPage))
             navigationItem.leftBarButtonItem = leftBarButton
             let rightBarButton = UIBarButtonItem(title: "Пропустить", style: .plain, target: self, action: #selector(skip))
             navigationItem.rightBarButtonItem = rightBarButton
             nextButton.setTitle("Далее", for: .normal)
         case 2:
-            let leftBarButton = createBarButtonItemWithIconAndTitle(icon: .arrowLeftIcon, title: "Назад", action: #selector(backPage))
+            let leftBarButton = createBarButtonItemWithIconAndTitle(icon: .arrowLeftIcon, title: "  Назад", action: #selector(backPage))
             navigationItem.leftBarButtonItem = leftBarButton
             navigationItem.rightBarButtonItem = nil
             nextButton.setTitle("Войти", for: .normal)

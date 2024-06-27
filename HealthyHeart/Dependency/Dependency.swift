@@ -9,7 +9,7 @@ import Foundation
 import Resolver
 
 fileprivate struct Config {
-    static let baseURL = URL(string: "https://api.law.fishrungames.com/api/")
+    static let baseURL = URL(string: "http://157.230.120.99:81/api/v1/profiles/")
     static let keychainAccessKey = Bundle.main.bundleIdentifier!
 }
 
@@ -83,6 +83,8 @@ struct Dependency {
     
     fileprivate static func registerScreens() {
         registerOnBoardingScreen()
+        registerAuthScreen()
+        registerConfirmNumberScreen()
     }
 }
 

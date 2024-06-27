@@ -26,12 +26,12 @@ final class MainButton: UIButton, IThemeApplyable {
     }
     
     func applyThemeProperties(_ themeProperties: ThemeProperties) {
-        backgroundColor = themeProperties.bgRedDefault
+        backgroundColor = themeProperties.blue
         setTitleColor(themeProperties.textWhite, for: .normal)
     }
     
     func changeActiveBackgroundButton(state: Bool) {
-        backgroundColor = state ? Theme.shared.bgRedDefault : Theme.shared.bgGray
+        backgroundColor = state ? Theme.shared.blue : Theme.shared.bgGray
         isEnabled = state
     }
 }
