@@ -10,7 +10,7 @@
 import UIKit
 
 protocol IAuthNavigator: IAlertPresentable {
-    func showConfirmNumberScreen(number: String, secretKey: String)
+    func showConfirmNumberScreen(number: String, secretKey: SecrectKeyModel)
 }
 
 struct AuthNavigator: IAuthNavigator {
@@ -21,7 +21,7 @@ struct AuthNavigator: IAuthNavigator {
     
     weak var viewController: IAuthViewController!
     
-    func showConfirmNumberScreen(number: String, secretKey: String) {
+    func showConfirmNumberScreen(number: String, secretKey: SecrectKeyModel) {
         let vc = Dependency.resolve(
             IConfirmNumberViewController.self,
             args: ["number": number, "secretKey": secretKey]

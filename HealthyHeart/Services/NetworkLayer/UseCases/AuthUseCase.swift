@@ -19,7 +19,7 @@ protocol IAuthUseCase {
     func refreshToken(with token: String, completion: @escaping (Result<TokenResponseModel, Error>) -> Void)
     func authUser(with phoneNumber: String, completion: @escaping (Result<SecrectKeyModel, Error>) -> Void)
     func resendPhoneCode(secretKey: String, phoneNumber: String, completion: @escaping (Result<SecrectKeyModel, Error>) -> Void)
-    func verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String,completion: @escaping (Result<ConfirmCodeResponseModel, Error>) -> Void)
+    func verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String,completion: @escaping (Result<TokenResponseModel, Error>) -> Void)
 }
 
 private struct AuthUseCase: IAuthUseCase {
@@ -42,7 +42,7 @@ private struct AuthUseCase: IAuthUseCase {
         return provider.request(target: .resendPhoneCode(secretKey: secretKey, phoneNumber: phoneNumber), isRetryable: false, completion: completion)
     }
     
-    func verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String, completion: @escaping (Result<ConfirmCodeResponseModel, any Error>) -> Void) {
+    func verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String, completion: @escaping (Result<TokenResponseModel, any Error>) -> Void) {
         return provider.request(target: .verifyPhoneNumber(secretKey: secretKey, phoneNumber: phoneNumber, phoneCode: phoneCode), isRetryable: false, completion: completion)
     }
 }

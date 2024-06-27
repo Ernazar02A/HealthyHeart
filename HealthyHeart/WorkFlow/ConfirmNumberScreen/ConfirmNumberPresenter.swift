@@ -28,13 +28,12 @@ final class ConfirmNumberPresenter: IConfirmNumberPresenter {
     private let authUseCase: IAuthUseCase
     private let locker = Locker()
     private let number: String
-    private var secretKey: String
-    
+    private var secretKey: SecrectKeyModel
     init(
         navigator: IConfirmNumberNavigator,
         authUseCase: IAuthUseCase,
         number: String,
-        secretKey: String
+        secretKey: SecrectKeyModel
     ) {
         self.navigator = navigator
         self.authUseCase = authUseCase
@@ -51,7 +50,7 @@ final class ConfirmNumberPresenter: IConfirmNumberPresenter {
         let sanitizedNumber = number.replacingOccurrences(of: " ", with: "")
         locker.lock()
         authUseCase.verifyPhoneNumber(
-            secretKey: secretKey,
+            secretKey: secretKey.secretKey,
             phoneNumber: sanitizedNumber,
             phoneCode: code
         ) { [weak self] result in
@@ -59,7 +58,8 @@ final class ConfirmNumberPresenter: IConfirmNumberPresenter {
             self.locker.unlock()
             switch result {
             case .success(let data):
-                if data.isCreate {
+                TokenService.shared.saveToken(with: data)
+                if let isCreate = secretKey.isCreated, isCreate {
                     navigator.presentSuccessVerificationScreen()
                 } else {
                     navigator.presentTabBarScreen()
@@ -81,14 +81,14 @@ final class ConfirmNumberPresenter: IConfirmNumberPresenter {
         let sanitizedNumber = number.replacingOccurrences(of: " ", with: "")
         locker.lock()
         authUseCase.resendPhoneCode(
-            secretKey: secretKey,
+            secretKey: secretKey.secretKey,
             phoneNumber: sanitizedNumber
         ) { [weak self] result in
             guard let self else { return }
             self.locker.unlock()
             switch result {
             case .success(let data):
-                self.secretKey = data.secretKey
+                self.secretKey.secretKey = data.secretKey
                 self.delegate?.reStartTimer()
             case .failure(let failure as NSError):
                 self.navigator.showNativeSingleButtonAlert(
