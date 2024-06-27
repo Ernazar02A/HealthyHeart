@@ -23,7 +23,8 @@ struct ConfirmNumberNavigator: IConfirmNumberNavigator {
     weak var viewController: IConfirmNumberViewController!
     
     func presentSuccessVerificationScreen() {
-        print("presentSuccessVerificationScreen")
+        let vc = Dependency.resolve(ISuccessfulLoginViewController.self)
+        viewController.navigationController?.pushViewController(vc, animated: true)
     }
     
     func presentTabBarScreen() {

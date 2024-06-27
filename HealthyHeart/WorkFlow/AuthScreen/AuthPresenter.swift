@@ -44,7 +44,7 @@ final class AuthPresenter: IAuthPresenter {
             case .success(let data):
                 navigator.showConfirmNumberScreen(
                     number: number,
-                    secretKey: data.secretKey
+                    secretKey: data
                 )
             case .failure(let error):
                 navigator.showNativeSingleButtonAlert(

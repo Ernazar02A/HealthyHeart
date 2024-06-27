@@ -8,9 +8,11 @@
 import Foundation
 
 struct SecrectKeyModel: Codable {
-    let secretKey: String
+    var secretKey: String
+    let isCreated: Bool?
     
     enum CodingKeys: String, CodingKey {
         case secretKey = "secret_key"
+        case isCreated = "is_created"
     }
 }
