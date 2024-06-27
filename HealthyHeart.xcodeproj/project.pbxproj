@@ -63,8 +63,8 @@
 		5244910A2C23000E00998314 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524491032C23000E00998314 /* BaseViewController.swift */; };
 		5244910C2C2302CE00998314 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244910B2C2302CE00998314 /* Font.swift */; };
 		52CC9D4F2C2ABB66007D2A88 /* SecrectKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9D4E2C2ABB66007D2A88 /* SecrectKeyModel.swift */; };
-		52CC9D522C2ACB82007D2A88 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9D512C2ACB82007D2A88 /* OneTimeCodeTextField.swift */; };
 		52CC9D542C2B203E007D2A88 /* ConfirmCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9D532C2B203E007D2A88 /* ConfirmCodeResponseModel.swift */; };
+		52F87F6A2C2D487F003E7750 /* ResendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F87F692C2D487F003E7750 /* ResendButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,8 +125,8 @@
 		524491032C23000E00998314 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5244910B2C2302CE00998314 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		52CC9D4E2C2ABB66007D2A88 /* SecrectKeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecrectKeyModel.swift; sourceTree = "<group>"; };
-		52CC9D512C2ACB82007D2A88 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
 		52CC9D532C2B203E007D2A88 /* ConfirmCodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeResponseModel.swift; sourceTree = "<group>"; };
+		52F87F692C2D487F003E7750 /* ResendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResendButton.swift; sourceTree = "<group>"; };
 		A16B0FFC7DD2BC62CD6707E3 /* Pods_HealthyHeart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthyHeart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF13881BC7E1BA0438017E4A /* Pods-HealthyHeart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyHeart.debug.xcconfig"; path = "Target Support Files/Pods-HealthyHeart/Pods-HealthyHeart.debug.xcconfig"; sourceTree = "<group>"; };
 		C7046D2CE47FEAC55BBCCDDE /* Pods-HealthyHeart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyHeart.release.xcconfig"; path = "Target Support Files/Pods-HealthyHeart/Pods-HealthyHeart.release.xcconfig"; sourceTree = "<group>"; };
@@ -454,7 +454,7 @@
 		52CC9D502C2ACA86007D2A88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				52CC9D512C2ACB82007D2A88 /* OneTimeCodeTextField.swift */,
+				52F87F692C2D487F003E7750 /* ResendButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -598,6 +598,7 @@
 				52413DDB2C298EBA00979932 /* ConfirmNumberNavigator.swift in Sources */,
 				52413DDC2C298EBA00979932 /* ConfirmNumberPresenter.swift in Sources */,
 				52CC9D4F2C2ABB66007D2A88 /* SecrectKeyModel.swift in Sources */,
+				52F87F6A2C2D487F003E7750 /* ResendButton.swift in Sources */,
 				52413DDD2C298EBA00979932 /* ConfirmNumberViewController.swift in Sources */,
 				5216E50F2C284BB200898B86 /* OnBoardingViewController.swift in Sources */,
 				524490C92C22FE3200998314 /* VerificationModel.swift in Sources */,
@@ -618,7 +619,6 @@
 				524490ED2C22FE5C00998314 /* UITableViewCell + Extention.swift in Sources */,
 				524490F02C22FE5C00998314 /* IAlertPresentable.swift in Sources */,
 				524490C72C22FE3200998314 /* EmailModel.swift in Sources */,
-				52CC9D522C2ACB82007D2A88 /* OneTimeCodeTextField.swift in Sources */,
 				524490C62C22FE3200998314 /* KeychainService.swift in Sources */,
 				524490EF2C22FE5C00998314 /* FigmaConvertable.swift in Sources */,
 				524490972C22F66500998314 /* SceneDelegate.swift in Sources */,
