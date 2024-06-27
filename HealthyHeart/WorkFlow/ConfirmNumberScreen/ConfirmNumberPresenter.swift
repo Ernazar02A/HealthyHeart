@@ -12,11 +12,13 @@ import Foundation
 protocol IConfirmNumberDelegate: AnyObject {
     func setNumber(number: String)
     func showErrorCode()
+    func reStartTimer()
 }
 
 protocol IConfirmNumberPresenter {
     func setDelegate(_ delegate: IConfirmNumberDelegate)
     func confirmCode(code: String)
+    func resendCode()
 }
 
 final class ConfirmNumberPresenter: IConfirmNumberPresenter {
@@ -26,7 +28,7 @@ final class ConfirmNumberPresenter: IConfirmNumberPresenter {
     private let authUseCase: IAuthUseCase
     private let locker = Locker()
     private let number: String
-    private let secretKey: String
+    private var secretKey: String
     
     init(
         navigator: IConfirmNumberNavigator,
@@ -71,6 +73,28 @@ final class ConfirmNumberPresenter: IConfirmNumberPresenter {
                         message: failure.localizedDescription
                     )
                 }
+            }
+        }
+    }
+    
+    func resendCode() {
+        let sanitizedNumber = number.replacingOccurrences(of: " ", with: "")
+        locker.lock()
+        authUseCase.resendPhoneCode(
+            secretKey: secretKey,
+            phoneNumber: sanitizedNumber
+        ) { [weak self] result in
+            guard let self else { return }
+            self.locker.unlock()
+            switch result {
+            case .success(let data):
+                self.secretKey = data.secretKey
+                self.delegate?.reStartTimer()
+            case .failure(let failure as NSError):
+                self.navigator.showNativeSingleButtonAlert(
+                    title: "Что то пошло не так",
+                    message: failure.localizedDescription
+                )
             }
         }
     }

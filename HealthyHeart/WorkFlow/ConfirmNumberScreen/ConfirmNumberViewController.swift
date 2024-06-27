@@ -44,12 +44,15 @@ final class ConfirmNumberViewController: IConfirmNumberViewController {
     
     private let confirmButton = MainButton(isActive: true)
     
+    private let resendButton = ResendButton()
+    
     var presenter: IConfirmNumberPresenter!
     
     override func setup() {
         super.setup()
         presenter.setDelegate(self)
         confirmButton.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
+        resendButton.addTarget(self, action: #selector(resendCode), for: .touchUpInside)
     }
     
     override func setupSubviews() {
@@ -60,6 +63,7 @@ final class ConfirmNumberViewController: IConfirmNumberViewController {
             codeTextField
             numberLabel
             confirmButton
+            resendButton
         }
     }
     
@@ -90,6 +94,11 @@ final class ConfirmNumberViewController: IConfirmNumberViewController {
             make.top.equalTo(codeTextField.snp.bottom).offset(heightComputed(24))
             make.height.equalTo(heightComputed(50))
         }
+        
+        resendButton.snp.makeConstraints { make in
+            make.top.equalTo(confirmButton.snp.bottom).offset(heightComputed(28))
+            make.centerX.equalToSuperview()
+        }
     }
     
     override func applyThemeProperties(_ themeProperties: any ThemeProperties) {
@@ -119,10 +128,19 @@ final class ConfirmNumberViewController: IConfirmNumberViewController {
             codeTextField.removerErrorBorder()
         }
     }
+    
+    @objc
+    private func resendCode() {
+        presenter.resendCode()
+    }
 }
 
 //MARK: - IConfirmNumberDelegate
 extension ConfirmNumberViewController: IConfirmNumberDelegate {
+    
+    func reStartTimer() {
+        resendButton.resetTimer()
+    }
     
     func showErrorCode() {
         codeTextField.showErrorTitle(title: "Не правильный код", isVisible: true)
