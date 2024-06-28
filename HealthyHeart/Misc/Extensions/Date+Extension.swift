@@ -60,9 +60,10 @@ extension Date {
     }
     
     private var locale: Locale {
-        guard let language = userDefaultsService.getValue(for: .language) else { return Locale.current }
-        let identifier = (language == .english ? .russian : language).localizableKey
-        return Locale(identifier: identifier)
+        //guard let language = userDefaultsService.getValue(for: .language) else { return Locale.current }
+        //let identifier = (language == .english ? .russian : language).localizableKey
+        //return Locale(identifier: identifier)
+        return Locale(identifier: "ru_RU")
     }
    
     /// Date in `dd.MM.yy` format

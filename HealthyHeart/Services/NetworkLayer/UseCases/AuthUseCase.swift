@@ -19,7 +19,8 @@ protocol IAuthUseCase {
     func refreshToken(with token: String, completion: @escaping (Result<TokenResponseModel, Error>) -> Void)
     func authUser(with phoneNumber: String, completion: @escaping (Result<SecrectKeyModel, Error>) -> Void)
     func resendPhoneCode(secretKey: String, phoneNumber: String, completion: @escaping (Result<SecrectKeyModel, Error>) -> Void)
-    func verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String,completion: @escaping (Result<TokenResponseModel, Error>) -> Void)
+    func verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String, completion: @escaping (Result<TokenResponseModel, Error>) -> Void)
+    func sendUserForm(userData: UserDateModel, completion: @escaping (Result<UserDateModel, Error>) -> Void)
 }
 
 private struct AuthUseCase: IAuthUseCase {
@@ -45,6 +46,10 @@ private struct AuthUseCase: IAuthUseCase {
     func verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String, completion: @escaping (Result<TokenResponseModel, any Error>) -> Void) {
         return provider.request(target: .verifyPhoneNumber(secretKey: secretKey, phoneNumber: phoneNumber, phoneCode: phoneCode), isRetryable: false, completion: completion)
     }
+    
+    func sendUserForm(userData: UserDateModel, completion: @escaping (Result<UserDateModel, any Error>) -> Void) {
+        return provider.request(target: .sendUserData(userData: userData), completion: completion)
+    }
 }
 
 private enum Target: INetworkRouter {
@@ -52,6 +57,7 @@ private enum Target: INetworkRouter {
     case authUser(phoneNumber: String)
     case resendPhoneCode(secretKey: String, phoneNumber: String)
     case verifyPhoneNumber(secretKey: String, phoneNumber: String, phoneCode: String)
+    case sendUserData(userData: UserDateModel)
 }
 
 extension Target: TargetType {
@@ -65,6 +71,8 @@ extension Target: TargetType {
             return "resend_phone_code/"
         case .verifyPhoneNumber:
             return "verify_phone_number/"
+        case .sendUserData:
+            return "user_form/"
         }
     }
     
@@ -77,6 +85,8 @@ extension Target: TargetType {
         case .resendPhoneCode:
             return .patch
         case .verifyPhoneNumber:
+            return .patch
+        case .sendUserData:
             return .patch
         }
     }
@@ -107,6 +117,18 @@ extension Target: TargetType {
                     "secret_key": secretKey,
                     "phone_number": phoneNumber,
                     "phone_code": phoneCode
+                ],
+                encoding: JSONEncoding.default
+            )
+        case .sendUserData(let userData):
+            return .requestParameters(
+                parameters: [
+                    "first_name": userData.firstName,
+                    "last_name": userData.lastName,
+                    "date_of_birth": userData.dateOfBirth,
+                    "gender": userData.male,
+                    "height": userData.height,
+                    "weight": userData.weight
                 ],
                 encoding: JSONEncoding.default
             )

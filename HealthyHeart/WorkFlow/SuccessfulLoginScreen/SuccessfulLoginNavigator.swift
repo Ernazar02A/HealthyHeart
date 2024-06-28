@@ -18,7 +18,8 @@ struct SuccessfulLoginNavigator: ISuccessfulLoginNavigator {
     weak var viewController: ISuccessfulLoginViewController!
     
     func pushInputScreen() {
-        print("pushInputScreen")
+        let vc = Dependency.resolve(IUserInformationFormViewController.self)
+        viewController.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
