@@ -28,7 +28,10 @@ struct ConfirmNumberNavigator: IConfirmNumberNavigator {
     }
     
     func presentTabBarScreen() {
-        print("presentTabBarScreen")
+        let vc = Dependency.resolve(ITabBarViewController.self)
+        let navigationVc = UINavigationController(rootViewController: vc)
+        navigationVc.modalPresentationStyle = .fullScreen
+        viewController.navigationController?.present(navigationVc, animated: true)
     }
 }
 

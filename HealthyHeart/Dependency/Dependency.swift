@@ -86,6 +86,12 @@ struct Dependency {
         registerAuthScreen()
         registerConfirmNumberScreen()
         registerSuccessfulLoginScreen()
+        registerUserInformationFormScreen()
+        registerTabBarScreen()
+        registerHomeScreen()
+        registerAnalyticsScreen()
+        registerDoctorsScreen()
+        registerReminderScreen()
     }
 }
 
