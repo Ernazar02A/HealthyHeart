@@ -7,7 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0993727D08F46C868C2CEAE6 /* Pods_HealthyHeart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16B0FFC7DD2BC62CD6707E3 /* Pods_HealthyHeart.framework */; };
+		451DB6CC2C2FBFE700230A3C /* ArticlesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451DB6CB2C2FBFE700230A3C /* ArticlesCollectionViewCell.swift */; };
+		45A674972C2D40AF006CB92F /* MainRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A674932C2D40AF006CB92F /* MainRegistration.swift */; };
+		45A674982C2D40AF006CB92F /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A674942C2D40AF006CB92F /* MainNavigator.swift */; };
+		45A674992C2D40AF006CB92F /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A674952C2D40AF006CB92F /* MainPresenter.swift */; };
+		45A6749A2C2D40AF006CB92F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A674962C2D40AF006CB92F /* MainViewController.swift */; };
+		45A6749C2C2D4173006CB92F /* MainViewController+CreateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6749B2C2D4173006CB92F /* MainViewController+CreateSection.swift */; };
+		45A6749E2C2D41BC006CB92F /* MainViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6749D2C2D41BC006CB92F /* MainViewController + Extension.swift */; };
+		45A674A02C2D4362006CB92F /* MainViewController + UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6749F2C2D4362006CB92F /* MainViewController + UICollectionViewDelegate.swift */; };
+		45A674A22C2D43C0006CB92F /* MainViewController + UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A674A12C2D43C0006CB92F /* MainViewController + UICollectionViewDataSource.swift */; };
+		45A674A42C2D45D8006CB92F /* SectionHeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A674A32C2D45D8006CB92F /* SectionHeaderTitleView.swift */; };
+		45A674A62C2D4659006CB92F /* SectionSmallHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A674A52C2D4659006CB92F /* SectionSmallHeaderView.swift */; };
+		45A674AA2C2D750C006CB92F /* SurveyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A674A92C2D750C006CB92F /* SurveyCollectionViewCell.swift */; };
+		45A674AD2C2D7760006CB92F /* SurveyCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A674AC2C2D7760006CB92F /* SurveyCustomView.swift */; };
+		45A674AF2C2D84A4006CB92F /* AdvicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A674AE2C2D84A4006CB92F /* AdvicesCollectionViewCell.swift */; };
 		5216E50C2C284BB100898B86 /* OnBoardingRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E5082C284BB100898B86 /* OnBoardingRegistration.swift */; };
 		5216E50D2C284BB200898B86 /* OnBoardingNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E5092C284BB100898B86 /* OnBoardingNavigator.swift */; };
 		5216E50E2C284BB200898B86 /* OnBoardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216E50A2C284BB100898B86 /* OnBoardingPresenter.swift */; };
@@ -65,9 +78,25 @@
 		52CC9D4F2C2ABB66007D2A88 /* SecrectKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9D4E2C2ABB66007D2A88 /* SecrectKeyModel.swift */; };
 		52CC9D522C2ACB82007D2A88 /* OneTimeCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9D512C2ACB82007D2A88 /* OneTimeCodeTextField.swift */; };
 		52CC9D542C2B203E007D2A88 /* ConfirmCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9D532C2B203E007D2A88 /* ConfirmCodeResponseModel.swift */; };
+		CFBA09EC16708C148390B0E5 /* Pods_HealthyHeart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90073E7F66CDB9FCB79862F2 /* Pods_HealthyHeart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		451DB6CB2C2FBFE700230A3C /* ArticlesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCollectionViewCell.swift; sourceTree = "<group>"; };
+		45A674932C2D40AF006CB92F /* MainRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRegistration.swift; sourceTree = "<group>"; };
+		45A674942C2D40AF006CB92F /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
+		45A674952C2D40AF006CB92F /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		45A674962C2D40AF006CB92F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		45A6749B2C2D4173006CB92F /* MainViewController+CreateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+CreateSection.swift"; sourceTree = "<group>"; };
+		45A6749D2C2D41BC006CB92F /* MainViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + Extension.swift"; sourceTree = "<group>"; };
+		45A6749F2C2D4362006CB92F /* MainViewController + UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		45A674A12C2D43C0006CB92F /* MainViewController + UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		45A674A32C2D45D8006CB92F /* SectionHeaderTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderTitleView.swift; sourceTree = "<group>"; };
+		45A674A52C2D4659006CB92F /* SectionSmallHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSmallHeaderView.swift; sourceTree = "<group>"; };
+		45A674A92C2D750C006CB92F /* SurveyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewCell.swift; sourceTree = "<group>"; };
+		45A674AC2C2D7760006CB92F /* SurveyCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCustomView.swift; sourceTree = "<group>"; };
+		45A674AE2C2D84A4006CB92F /* AdvicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvicesCollectionViewCell.swift; sourceTree = "<group>"; };
+		45C32B086BDE7FAE3469AA96 /* Pods-HealthyHeart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyHeart.debug.xcconfig"; path = "Target Support Files/Pods-HealthyHeart/Pods-HealthyHeart.debug.xcconfig"; sourceTree = "<group>"; };
 		5216E5082C284BB100898B86 /* OnBoardingRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingRegistration.swift; sourceTree = "<group>"; };
 		5216E5092C284BB100898B86 /* OnBoardingNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingNavigator.swift; sourceTree = "<group>"; };
 		5216E50A2C284BB100898B86 /* OnBoardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPresenter.swift; sourceTree = "<group>"; };
@@ -127,9 +156,8 @@
 		52CC9D4E2C2ABB66007D2A88 /* SecrectKeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecrectKeyModel.swift; sourceTree = "<group>"; };
 		52CC9D512C2ACB82007D2A88 /* OneTimeCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeTextField.swift; sourceTree = "<group>"; };
 		52CC9D532C2B203E007D2A88 /* ConfirmCodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeResponseModel.swift; sourceTree = "<group>"; };
-		A16B0FFC7DD2BC62CD6707E3 /* Pods_HealthyHeart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthyHeart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF13881BC7E1BA0438017E4A /* Pods-HealthyHeart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyHeart.debug.xcconfig"; path = "Target Support Files/Pods-HealthyHeart/Pods-HealthyHeart.debug.xcconfig"; sourceTree = "<group>"; };
-		C7046D2CE47FEAC55BBCCDDE /* Pods-HealthyHeart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyHeart.release.xcconfig"; path = "Target Support Files/Pods-HealthyHeart/Pods-HealthyHeart.release.xcconfig"; sourceTree = "<group>"; };
+		90073E7F66CDB9FCB79862F2 /* Pods_HealthyHeart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthyHeart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA9AEDA290C83F1C481417A /* Pods-HealthyHeart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyHeart.release.xcconfig"; path = "Target Support Files/Pods-HealthyHeart/Pods-HealthyHeart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,13 +165,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0993727D08F46C868C2CEAE6 /* Pods_HealthyHeart.framework in Frameworks */,
+				CFBA09EC16708C148390B0E5 /* Pods_HealthyHeart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45A674922C2D4081006CB92F /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				45A674A72C2D74D1006CB92F /* CustomViews */,
+				45A674932C2D40AF006CB92F /* MainRegistration.swift */,
+				45A674942C2D40AF006CB92F /* MainNavigator.swift */,
+				45A674952C2D40AF006CB92F /* MainPresenter.swift */,
+				45A674962C2D40AF006CB92F /* MainViewController.swift */,
+				45A6749B2C2D4173006CB92F /* MainViewController+CreateSection.swift */,
+				45A6749D2C2D41BC006CB92F /* MainViewController + Extension.swift */,
+				45A6749F2C2D4362006CB92F /* MainViewController + UICollectionViewDelegate.swift */,
+				45A674A12C2D43C0006CB92F /* MainViewController + UICollectionViewDataSource.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		45A674A72C2D74D1006CB92F /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				45A674AB2C2D774D006CB92F /* Views */,
+				45A674A82C2D74D9006CB92F /* Cells */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		45A674A82C2D74D9006CB92F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				45A674A92C2D750C006CB92F /* SurveyCollectionViewCell.swift */,
+				45A674AE2C2D84A4006CB92F /* AdvicesCollectionViewCell.swift */,
+				451DB6CB2C2FBFE700230A3C /* ArticlesCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		45A674AB2C2D774D006CB92F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				45A674A32C2D45D8006CB92F /* SectionHeaderTitleView.swift */,
+				45A674A52C2D4659006CB92F /* SectionSmallHeaderView.swift */,
+				45A674AC2C2D7760006CB92F /* SurveyCustomView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5216E5072C284B7800898B86 /* OnBoardingScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +266,7 @@
 				524490932C22F66500998314 /* HealthyHeart */,
 				524490922C22F66500998314 /* Products */,
 				7FF4BF5F07D5968292D96AC2 /* Pods */,
-				AEEF056BBBF8BF667D319826 /* Frameworks */,
+				A213075CC2A9CABC7BF014B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -430,6 +503,7 @@
 		524490FD2C22FFF600998314 /* WorkFlow */ = {
 			isa = PBXGroup;
 			children = (
+				45A674922C2D4081006CB92F /* MainScreen */,
 				524491042C23000E00998314 /* Base */,
 				5216E5072C284B7800898B86 /* OnBoardingScreen */,
 				52413DCC2C29670A00979932 /* AuthScreen */,
@@ -462,16 +536,16 @@
 		7FF4BF5F07D5968292D96AC2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BF13881BC7E1BA0438017E4A /* Pods-HealthyHeart.debug.xcconfig */,
-				C7046D2CE47FEAC55BBCCDDE /* Pods-HealthyHeart.release.xcconfig */,
+				45C32B086BDE7FAE3469AA96 /* Pods-HealthyHeart.debug.xcconfig */,
+				EDA9AEDA290C83F1C481417A /* Pods-HealthyHeart.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		AEEF056BBBF8BF667D319826 /* Frameworks */ = {
+		A213075CC2A9CABC7BF014B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A16B0FFC7DD2BC62CD6707E3 /* Pods_HealthyHeart.framework */,
+				90073E7F66CDB9FCB79862F2 /* Pods_HealthyHeart.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -483,11 +557,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 524490A52C22F66800998314 /* Build configuration list for PBXNativeTarget "HealthyHeart" */;
 			buildPhases = (
-				F541657F548C8CF7B6195129 /* [CP] Check Pods Manifest.lock */,
+				A6C2A26E856B6ECD49A79ADF /* [CP] Check Pods Manifest.lock */,
 				5244908D2C22F66500998314 /* Sources */,
 				5244908E2C22F66500998314 /* Frameworks */,
 				5244908F2C22F66500998314 /* Resources */,
-				5DA5FB6B2253E867A1599CE0 /* [CP] Embed Pods Frameworks */,
+				00CD3CDF26121EB7BE420E91 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -544,7 +618,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5DA5FB6B2253E867A1599CE0 /* [CP] Embed Pods Frameworks */ = {
+		00CD3CDF26121EB7BE420E91 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -561,7 +635,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HealthyHeart/Pods-HealthyHeart-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F541657F548C8CF7B6195129 /* [CP] Check Pods Manifest.lock */ = {
+		A6C2A26E856B6ECD49A79ADF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -603,9 +677,12 @@
 				524490C92C22FE3200998314 /* VerificationModel.swift in Sources */,
 				524490EB2C22FE5C00998314 /* UILabel + Extension.swift in Sources */,
 				524490CD2C22FE3200998314 /* TokenService.swift in Sources */,
+				45A6749E2C2D41BC006CB92F /* MainViewController + Extension.swift in Sources */,
 				524490D02C22FE3200998314 /* ValidatorService.swift in Sources */,
 				524490E82C22FE5C00998314 /* UIButton + Extension.swift in Sources */,
 				524490952C22F66500998314 /* AppDelegate.swift in Sources */,
+				45A674A22C2D43C0006CB92F /* MainViewController + UICollectionViewDataSource.swift in Sources */,
+				451DB6CC2C2FBFE700230A3C /* ArticlesCollectionViewCell.swift in Sources */,
 				524490E92C22FE5C00998314 /* UICollectionReusableView + Extension.swift in Sources */,
 				524490AC2C22FE0900998314 /* Dependency.swift in Sources */,
 				524490CB2C22FE3200998314 /* NetworkRouter.swift in Sources */,
@@ -615,6 +692,7 @@
 				524490F12C22FE5C00998314 /* DefaultScreenLocker.swift in Sources */,
 				524490E72C22FE5C00998314 /* Date+Extension.swift in Sources */,
 				524491062C23000E00998314 /* BaseCollectionViewCell.swift in Sources */,
+				45A6749C2C2D4173006CB92F /* MainViewController+CreateSection.swift in Sources */,
 				524490ED2C22FE5C00998314 /* UITableViewCell + Extention.swift in Sources */,
 				524490F02C22FE5C00998314 /* IAlertPresentable.swift in Sources */,
 				524490C72C22FE3200998314 /* EmailModel.swift in Sources */,
@@ -631,8 +709,14 @@
 				524490EC2C22FE5C00998314 /* UITableView + Extension.swift in Sources */,
 				524491052C23000E00998314 /* BaseCollectionReusableView.swift in Sources */,
 				524490F22C22FE5C00998314 /* Locker.swift in Sources */,
+				45A674AF2C2D84A4006CB92F /* AdvicesCollectionViewCell.swift in Sources */,
+				45A674972C2D40AF006CB92F /* MainRegistration.swift in Sources */,
+				45A674982C2D40AF006CB92F /* MainNavigator.swift in Sources */,
+				45A674992C2D40AF006CB92F /* MainPresenter.swift in Sources */,
+				45A6749A2C2D40AF006CB92F /* MainViewController.swift in Sources */,
 				52413DD12C29672100979932 /* AuthRegistration.swift in Sources */,
 				52413DD22C29672100979932 /* AuthNavigator.swift in Sources */,
+				45A674A42C2D45D8006CB92F /* SectionHeaderTitleView.swift in Sources */,
 				52413DD32C29672100979932 /* AuthPresenter.swift in Sources */,
 				52413DD42C29672100979932 /* AuthViewController.swift in Sources */,
 				52CC9D542C2B203E007D2A88 /* ConfirmCodeResponseModel.swift in Sources */,
@@ -643,7 +727,11 @@
 				524490F52C22FE5C00998314 /* ThemeApplyable.swift in Sources */,
 				524491092C23000E00998314 /* BaseView.swift in Sources */,
 				524490CE2C22FE3200998314 /* UserDefaultKey.swift in Sources */,
+				45A674A02C2D4362006CB92F /* MainViewController + UICollectionViewDelegate.swift in Sources */,
+				45A674AA2C2D750C006CB92F /* SurveyCollectionViewCell.swift in Sources */,
+				45A674AD2C2D7760006CB92F /* SurveyCustomView.swift in Sources */,
 				524490C82C22FE3200998314 /* TokenResponseModel.swift in Sources */,
+				45A674A62C2D4659006CB92F /* SectionSmallHeaderView.swift in Sources */,
 				5216E5122C28604600898B86 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,7 +871,7 @@
 		};
 		524490A62C22F66800998314 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF13881BC7E1BA0438017E4A /* Pods-HealthyHeart.debug.xcconfig */;
+			baseConfigurationReference = 45C32B086BDE7FAE3469AA96 /* Pods-HealthyHeart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -815,7 +903,7 @@
 		};
 		524490A72C22F66800998314 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7046D2CE47FEAC55BBCCDDE /* Pods-HealthyHeart.release.xcconfig */;
+			baseConfigurationReference = EDA9AEDA290C83F1C481417A /* Pods-HealthyHeart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

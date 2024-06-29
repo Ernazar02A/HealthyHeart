@@ -17,6 +17,9 @@ protocol ThemeProperties {
     var labelSecondary: UIColor { get }
     var labelPrimary: UIColor { get }
     var bgPrimary: UIColor { get }
+    var bgGraySecondary: UIColor { get }
+    var bgGrayButtons: UIColor { get }
+    var dateBgGray: UIColor { get }
 }
 
 struct Theme: ThemeProperties {
@@ -40,4 +43,10 @@ struct Theme: ThemeProperties {
     var labelPrimary: UIColor = UIColor(named: "label_primary")!
     
     var bgPrimary: UIColor = UIColor(named: "bg_primary")!
+    
+    var bgGraySecondary: UIColor = UIColor(named: "bg_gray_secondary")!
+    
+    var bgGrayButtons: UIColor = UIColor(named: "bg_gray_buttons")!
+    
+    var dateBgGray: UIColor = UIColor(named: "date_bg_gray")!
 }

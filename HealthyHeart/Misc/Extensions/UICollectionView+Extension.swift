@@ -39,4 +39,14 @@ extension UICollectionView {
     func getSupplementaryView<View>(for indexPath: IndexPath, with type: View.Type, kind: String) -> View {
         return supplementaryView(forElementKind: kind, at: indexPath) as! View
     }
+    
+    func registerCells(cells: [UICollectionViewCell.Type]) {
+        cells.forEach { cell in
+            self.register(cell.self, forCellWithReuseIdentifier: cell.identifier)
+        }
+    }
+    
+    func registerItemsSupplementaryView(view: UICollectionReusableView.Type) {
+        self.register(view.self, forSupplementaryViewOfKind: view.identifier, withReuseIdentifier: view.identifier)
+    }
 }
